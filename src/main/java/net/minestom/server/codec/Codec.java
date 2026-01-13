@@ -574,7 +574,7 @@ public interface Codec<T extends @UnknownNullability Object> extends Encoder<T>,
      */
     @Contract(pure = true, value = "_ -> new")
     default <S> Codec<T> orElse(Codec<S> other, ThrowingFunction<S, T> mapper) {
-        return new CodecImpl.OrElseImpl<>(this, other.transform(mapper, _ -> {
+        return new CodecImpl.OrElseImpl<>(this, other.transform(mapper, unused -> {
             throw new UnsupportedOperationException("unreachable");
         }));
     }

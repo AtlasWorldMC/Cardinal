@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-val javaVersion = System.getenv("JAVA_VERSION") ?: "25"
+val javaVersion = project.property("java_version") as String
 
 group = "net.minestom"
 version = System.getenv("MINESTOM_VERSION") ?: "dev"

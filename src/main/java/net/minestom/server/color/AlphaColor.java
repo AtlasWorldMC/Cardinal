@@ -138,7 +138,7 @@ public final class AlphaColor extends Color implements ARGBLike {
             int rgba = HexFormat.fromHexDigits(hexRGBA, 1, 9);
             int argb = Integer.rotateRight(rgba, 8);
             return new AlphaColor(argb);
-        } catch (NumberFormatException _) {
+        } catch (NumberFormatException unused) {
             return null;
         }
     }
@@ -158,7 +158,7 @@ public final class AlphaColor extends Color implements ARGBLike {
         try {
             int argb = HexFormat.fromHexDigits(hexARGB, 1, 9);
             return new AlphaColor(argb);
-        } catch (NumberFormatException _) {
+        } catch (NumberFormatException unused) {
             return null;
         }
     }

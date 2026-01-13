@@ -371,7 +371,7 @@ final class CodecImpl {
         @Override
         public <D> Result<R> decodeFromMap(Transcoder<D> coder, MapLike<D> map) {
             Result<T> keyResult = map.getValue(keyField).map(key -> keyCodec.decode(coder, key));
-            if (keyResult instanceof Result.Error<T> && keyCodec instanceof OptionalImpl(var _, var defaultValue))
+            if (keyResult instanceof Result.Error<T> && keyCodec instanceof OptionalImpl(var unused, var defaultValue))
                 keyResult = new Result.Ok<>(defaultValue);
             if (!(keyResult instanceof Result.Ok(T key)))
                 return keyResult.cast();

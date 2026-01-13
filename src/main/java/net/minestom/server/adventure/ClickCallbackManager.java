@@ -66,7 +66,7 @@ public final class ClickCallbackManager implements Tickable {
             final UUID uuid;
             try {
                 uuid = UUIDUtils.fromNbt(tag);
-            } catch (final IndexOutOfBoundsException _) {
+            } catch (final IndexOutOfBoundsException unused) {
                 return;
             }
 
@@ -98,7 +98,7 @@ public final class ClickCallbackManager implements Tickable {
         long expiry;
         try {
             expiry = System.nanoTime() + options.lifetime().toNanos();
-        } catch (final ArithmeticException _) {
+        } catch (final ArithmeticException unused) {
             expiry = Long.MAX_VALUE;
         }
 
