@@ -36,16 +36,20 @@ tasks.register<Task>("determineMinecraftVersion") {
 }
 
 dependencies {
+    implementation(project(":api"))
+
     // Core dependencies
-    api(libs.bundles.adventure)
+    implementation(libs.bundles.adventure)
     implementation(libs.slf4j)
     implementation(libs.minestomData)
 
     // Performance/data structures
     implementation(libs.fastutil)
     implementation(libs.bundles.flare)
-    api(libs.gson)
+    implementation(libs.gson)
     implementation(libs.jcTools)
+
+    implementation(libs.jopt)
 
     testImplementation(project(":testing"))
 }

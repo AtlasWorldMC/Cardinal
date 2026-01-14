@@ -4,8 +4,8 @@ plugins {
 
 val javaVersion = project.property("java_version") as String
 
-group = "net.minestom"
-version = System.getenv("MINESTOM_VERSION") ?: "dev"
+group = project.property("group") as String
+version = System.getenv("VERSION") ?: "dev"
 
 configurations.all {
     // We only use Jetbrains Annotations

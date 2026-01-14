@@ -54,7 +54,7 @@ jobs:
         if: github.repository_owner == 'Minestom'
         run: ./gradlew publishAggregationToCentralPortal
         env:
-          MINESTOM_VERSION: ${{ steps.version.outputs.version }}
+          VERSION: ${{ steps.version.outputs.version }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
